@@ -1,0 +1,27 @@
+<html layout:decorate="~{layout}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<div layout:fragment="content" class="d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+    <div class="toss-card w-100" style="max-width: 400px;">
+        <h2 class="text-center mb-4">로그인</h2>
+        <form th:action="@{/members/login}" method="post">
+            <input type="hidden" th:name="${_csrf?.parameterName}" th:value="${_csrf?.token}" />
+            <div th:if="${param.error}" class="alert alert-danger" style="border-radius: var(--toss-radius-sm);">
+                아이디 또는 비밀번호를 확인해 주세요.
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">아이디</label>
+                <input type="text" class="form-control" id="username" name="username"  placeholder="아이디를 입력하세요">
+            </div>
+            <div class="mb-4">
+                <label for="password" class="form-label">비밀번호</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="비밀번호를 입력하세요">
+            </div>
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-lg">로그인</button>
+            </div>
+        </form>
+        <div class="text-center mt-4">
+            <a href="/article/list" class="text-decoration-none" style="color: var(--toss-text-tertiary); font-weight: 500;">목록으로 돌아가기</a>
+        </div>
+    </div>
+</div>
+</html>

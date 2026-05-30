@@ -1,0 +1,10 @@
+<html layout:decorate="~{layout}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <div layout:fragment="content" class="my-4">
+        <h2 class="mb-4">글 수정</h2>
+        <!-- 공통 폼 불러오기 -->
+        <div th:replace="~{article/article/writeForm :: articleForm(@{|/article/modify/${article.getId()}|}, '수정')}"></div>
+        <div class="mt-4">
+            <a href="/article/list" class="btn btn-outline-secondary" style="border-radius: var(--toss-radius-sm);">목록으로 돌아가기</a>
+        </div>
+    </div>
+</html>

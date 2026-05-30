@@ -1,0 +1,154 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+:root {
+    --toss-blue: #3182f6;
+    --toss-blue-hover: #1b64da;
+    --toss-bg: #f2f4f6;
+    --toss-surface: #ffffff;
+    --toss-text-primary: #333d4b;
+    --toss-text-secondary: #4e5968;
+    --toss-text-tertiary: #8b95a1;
+    --toss-border: #f2f4f6;
+    --toss-radius-sm: 8px;
+    --toss-radius: 16px;
+    --toss-radius-lg: 24px;
+    --toss-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    background-color: var(--toss-bg);
+    color: var(--toss-text-primary);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Utilities for Toss Design */
+.toss-card {
+    background-color: var(--toss-surface);
+    border-radius: var(--toss-radius);
+    box-shadow: var(--toss-shadow);
+    padding: 32px;
+    border: none;
+}
+
+.toss-card-sm {
+    padding: 24px;
+}
+
+/* Overriding Bootstrap Primary Button */
+.btn-primary {
+    background-color: var(--toss-blue) !important;
+    border-color: var(--toss-blue) !important;
+    color: white !important;
+    border-radius: var(--toss-radius-sm);
+    padding: 12px 20px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--toss-blue-hover) !important;
+    border-color: var(--toss-blue-hover) !important;
+}
+
+/* Input Styles */
+.form-control {
+    border-radius: var(--toss-radius-sm);
+    padding: 14px 16px;
+    border: 1px solid var(--toss-border);
+    background-color: #fafafa;
+    color: var(--toss-text-primary);
+    font-size: 16px;
+}
+
+.form-control:focus {
+    background-color: #ffffff;
+    border-color: var(--toss-blue);
+    box-shadow: 0 0 0 2px rgba(49, 130, 246, 0.2);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--toss-text-secondary);
+    margin-bottom: 8px;
+}
+
+/* Navbar overrides */
+.toss-navbar {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--toss-border);
+}
+
+.toss-navbar .nav-link {
+    font-weight: 500;
+    color: var(--toss-text-secondary) !important;
+    transition: color 0.2s;
+}
+
+.toss-navbar .nav-link:hover {
+    color: var(--toss-text-primary) !important;
+}
+
+.toss-navbar .navbar-brand {
+    font-weight: 800;
+    color: var(--toss-text-primary) !important;
+    font-size: 24px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--toss-text-primary);
+    letter-spacing: -0.5px;
+}
+
+/* Table styles */
+.toss-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.toss-table th {
+    background-color: var(--toss-bg);
+    color: var(--toss-text-secondary);
+    font-weight: 600;
+    padding: 16px;
+    border-bottom: 1px solid var(--toss-border);
+    text-align: left;
+}
+
+.toss-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--toss-border);
+    color: var(--toss-text-primary);
+}
+
+.toss-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Pagination overrides */
+.pagination {
+    margin-top: 32px;
+}
+
+.page-link {
+    color: var(--toss-text-secondary);
+    border: none;
+    border-radius: var(--toss-radius-sm);
+    margin: 0 4px;
+    padding: 8px 16px;
+}
+
+.page-item.active .page-link {
+    background-color: var(--toss-blue);
+    border-color: var(--toss-blue);
+    color: white;
+}
+
+.page-link:hover {
+    background-color: #f2f4f6;
+    color: var(--toss-text-primary);
+}

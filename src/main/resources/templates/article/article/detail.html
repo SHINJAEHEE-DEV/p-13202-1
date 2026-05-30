@@ -1,0 +1,26 @@
+<html layout:decorate="~{layout}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.w3.org/1999/xhtml">
+    <div layout:fragment="content" class="my-4">
+        <!--타임리프 표현식(${...}) 안에는 자바 객체나 변수만 들어가야 함
+         리터럴 치환 수식 ||를 사용하면 문자도 같이 사용가능-->
+        <div class="toss-card mb-4">
+            <h5 class="text-muted mb-2" th:text="@{|${article.getId()}번 게시글|}" style="color: var(--toss-text-tertiary) !important; font-size: 14px;"></h5>
+            <h2 class="mb-4" th:text="${article.getTitle()}"></h2>
+            
+            <div class="mb-5" style="white-space: pre-line; font-size: 16px; line-height: 1.6;" th:text="${article.getContent()}">
+            </div>
+            
+            <div class="d-flex justify-content-between align-items-center pt-4" style="border-top: 1px solid var(--toss-border);">
+                <div>
+                    <a href="/article/list" class="btn btn-outline-secondary" style="border-radius: var(--toss-radius-sm);">목록으로</a>
+                </div>
+                <div class="d-flex gap-2" sec:authorize="isAuthenticated()" th:if="${#authentication.name == article.author.username}">
+                    <a th:href="@{|/article/modify/${article.getId()}|}" class="btn btn-outline-primary" style="border-radius: var(--toss-radius-sm);">수정</a>
+                    <form th:action="@{|/article/delete/${article.getId()}|}" method="post" class="m-0">
+                        <button type="submit" class="btn btn-outline-danger" style="border-radius: var(--toss-radius-sm);">삭제</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>
